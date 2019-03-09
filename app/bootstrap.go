@@ -10,7 +10,7 @@ import (
 
 // SecretKey to secure the App
 func SecretKey() string {
-	return "941C1A0A-AF24-42F5-96D8-A70927549573"
+	return "941C1A0A-AF24-42F5-96D8-A7092754" // Must be 32 bytes
 }
 
 func init() {

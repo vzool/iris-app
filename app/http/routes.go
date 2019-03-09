@@ -11,6 +11,8 @@ func Routes(app *iris.Application) {
 	app.UseGlobal(middleware.HideID)
 
 	app.Get("/ping", controller.GetPing)
+	app.Get("/token", controller.GetToken)
+	app.Post("/verify", controller.VerifyToken)
 
 	app.Get("/city", controller.CityIndex)
 	app.Post("/city", controller.CityStore)

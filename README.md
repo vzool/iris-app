@@ -6,6 +6,7 @@
 -   [Gorm](https://github.com/jinzhu/gorm) to manage Database.
 -   [Validator](https://github.com/asaskevich/govalidator)
 -   [hide](https://github.com/emvi/hide) to hide really records ID
+-   [Platform-Agnostic Security Tokens](https://github.com/o1egl/paseto) to secure API tokens
 -   [CLI](https://github.com/urfave/cli) used for:
 
     1- Database Migration.
