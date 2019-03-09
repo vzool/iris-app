@@ -17,17 +17,19 @@
 ### Project structure
 
 ```sh
+.
 ├── README.md
 ├── app
+│   ├── bootstrap.go
 │   ├── console
 │   │   └── migrate.go
-│   ├── database.go
 │   ├── http
 │   │   ├── controllers
 │   │   │   ├── city.go
 │   │   │   ├── task.go
 │   │   │   └── test.go
 │   │   ├── middleware
+│   │   │   └── hideID.go
 │   │   └── routes.go
 │   ├── jobs
 │   └── models
