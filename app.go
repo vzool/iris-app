@@ -30,20 +30,13 @@ func main() {
 		return nil
 	}
 
-	app.Commands = []cli.Command{
-		{
-			Name:        "run",
-			Aliases:     []string{"r"},
-			Action:      app.Action,
-			Description: "Run the web application",
-		},
-		{
-			Name:        "migrate",
-			Aliases:     []string{"m"},
-			Action:      console.Migrate,
-			Description: "Migrate database",
-		},
-	}
+	// load all commands from the kernel's console
+	app.Commands = console.Commands(cli.Command{
+		Name:        "run",
+		Aliases:     []string{"r"},
+		Action:      app.Action,
+		Description: "Run the web application",
+	})
 
 	err := app.Run(os.Args)
 	if err != nil {

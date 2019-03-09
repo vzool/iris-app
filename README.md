@@ -22,6 +22,7 @@
 ├── app
 │   ├── bootstrap.go
 │   ├── console
+│   │   ├── kernel.go
 │   │   └── migrate.go
 │   ├── http
 │   │   ├── controllers

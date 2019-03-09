@@ -8,12 +8,17 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
-func init() {
-	// setup hideID and here we need some secret
-	hide.UseHash(hide.NewHashID("iris-app", 9))
+// SecretKey to secure the App
+func SecretKey() string {
+	return "941C1A0A-AF24-42F5-96D8-A70927549573"
 }
 
-// DB Connection
+func init() {
+	// setup hideID and here we need some secret
+	hide.UseHash(hide.NewHashID(SecretKey(), 9))
+}
+
+// DB Connection to database
 func DB() *gorm.DB {
 
 	db, err := gorm.Open("sqlite3", "test.db")
