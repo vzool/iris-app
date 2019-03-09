@@ -12,8 +12,6 @@ import (
 	cli "gopkg.in/urfave/cli.v1"
 )
 
-var Env map[string]string
-
 func main() {
 
 	app := cli.NewApp()
@@ -34,9 +32,16 @@ func main() {
 
 	app.Commands = []cli.Command{
 		{
-			Name:    "migrate",
-			Aliases: []string{"m"},
-			Action:  console.Migrate,
+			Name:        "run",
+			Aliases:     []string{"r"},
+			Action:      app.Action,
+			Description: "Run the web application",
+		},
+		{
+			Name:        "migrate",
+			Aliases:     []string{"m"},
+			Action:      console.Migrate,
+			Description: "Migrate database",
 		},
 	}
 

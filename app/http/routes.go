@@ -3,9 +3,12 @@ package http
 import (
 	"github.com/kataras/iris"
 	controller "github.com/vzool/iris-app/app/http/controllers"
+	"github.com/vzool/iris-app/app/http/middleware"
 )
 
 func Routes(app *iris.Application) {
+
+	app.UseGlobal(middleware.HideID)
 
 	app.Get("/ping", controller.GetPing)
 

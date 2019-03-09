@@ -1,9 +1,17 @@
 package app
 
 import (
+	"github.com/emvi/hide"
 	"github.com/jinzhu/gorm"
+
+	// SQLite dialect for Gorm
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
+
+func init() {
+	// setup hideID and here we need some secret
+	hide.UseHash(hide.NewHashID("iris-app", 9))
+}
 
 // DB Connection
 func DB() *gorm.DB {
