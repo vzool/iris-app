@@ -12,3 +12,27 @@
     2- Database Seed.
     
     3- Run The Web Application.
+
+### Project structure
+
+```
+├── README.md
+├── app
+│   ├── console
+│   │   └── migrate.go
+│   ├── database.go
+│   ├── http
+│   │   ├── controllers
+│   │   │   ├── city.go
+│   │   │   ├── task.go
+│   │   │   └── test.go
+│   │   ├── middleware
+│   │   └── routes.go
+│   ├── jobs
+│   └── models
+│       ├── city.go
+│       └── task.go
+├── app.go
+├── public
+└── test.db
+```
