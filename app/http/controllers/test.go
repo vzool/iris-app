@@ -134,12 +134,15 @@ func Binding(ctx iris.Context) {
 	data := request.City{}
 	err := ctx.ReadForm(&data)
 
-	if err != nil {
+	if err != nil && !iris.IsErrPath(err) {
 
 		ctx.JSON(iris.Map{
 			"status":   "ERROR",
 			"message1": err.Error,
 		})
+
+		// ctx.StatusCode(iris.StatusInternalServerError)
+		// ctx.WriteString(err.Error())
 
 	} else {
 
