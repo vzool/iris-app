@@ -3,10 +3,15 @@ package console
 import cli "gopkg.in/urfave/cli.v1"
 
 // Commands is place to register all commands
-func Commands(defaultCommand cli.Command) []cli.Command {
+func Commands() []cli.Command {
 
 	return []cli.Command{
-		defaultCommand,
+		{
+			Name:        "run",
+			Aliases:     []string{"r"},
+			Action:      WebApp,
+			Description: "Run the web application",
+		},
 		{
 			Name:        "migrate",
 			Aliases:     []string{"m"},

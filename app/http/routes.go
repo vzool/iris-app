@@ -15,6 +15,7 @@ func Routes(app *iris.Application) {
 	app.Get("/token", controller.GetToken)
 	app.Post("/verify", controller.VerifyToken)
 	app.Get("/hash", controller.Blake2BHash)
+	app.Post("/binding", controller.Binding)
 
 	app.Get("/city", controller.CityIndex)
 	app.Post("/city", controller.CityStore)

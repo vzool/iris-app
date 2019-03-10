@@ -6,7 +6,7 @@ import (
 	cli "gopkg.in/urfave/cli.v1"
 )
 
-// Migrate CLI
+// Migrate Command
 func Migrate(c *cli.Context) error {
 
 	db := app.DB()

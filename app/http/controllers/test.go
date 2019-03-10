@@ -12,6 +12,7 @@ import (
 	"github.com/kataras/iris"
 	"github.com/o1egl/paseto"
 	"github.com/vzool/iris-app/app"
+	request "github.com/vzool/iris-app/app/http/requests"
 )
 
 // GetPing Handler
@@ -123,6 +124,28 @@ func Blake2BHash(ctx iris.Context) {
 			"blake-256": blake2b.Sum256([]byte("Hello World!!!")),
 			"blake-384": blake2b.Sum384([]byte("Hello World!!!")),
 			"blake-512": blake2b.Sum512([]byte("Hello World!!!")),
+		})
+	}
+}
+
+// Binding Handler
+func Binding(ctx iris.Context) {
+
+	data := request.City{}
+	err := ctx.ReadForm(&data)
+
+	if err != nil {
+
+		ctx.JSON(iris.Map{
+			"status":   "ERROR",
+			"message1": err.Error,
+		})
+
+	} else {
+
+		ctx.JSON(iris.Map{
+			"status": "OK",
+			"data":   data,
 		})
 	}
 }
