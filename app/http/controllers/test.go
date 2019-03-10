@@ -1,7 +1,10 @@
 package controllers
 
 import (
+	"net/http"
 	"time"
+
+	"golang.org/x/crypto/blake2b"
 
 	"github.com/gobuffalo/uuid"
 
@@ -63,6 +66,10 @@ func GetToken(ctx iris.Context) {
 			"status": "OK",
 			"token":  token,
 		})
+
+		ctx.SetCookieKV("token", token, func(option *http.Cookie) {
+			option.HttpOnly = true
+		})
 	}
 }
 
@@ -74,9 +81,9 @@ func VerifyToken(ctx iris.Context) {
 	symmetricKey := []byte(app.SecretKey()) // Must be 32 bytes
 
 	// Decrypt data
-	var newJsonToken paseto.JSONToken
+	var newJSONToken paseto.JSONToken
 	var newFooter string
-	err := paseto.NewV2().Decrypt(token, symmetricKey, &newJsonToken, &newFooter)
+	err := paseto.NewV2().Decrypt(token, symmetricKey, &newJSONToken, &newFooter)
 
 	if err != nil {
 
@@ -91,7 +98,31 @@ func VerifyToken(ctx iris.Context) {
 			"status":       "OK",
 			"token":        token,
 			"newFooter":    newFooter,
-			"newJsonToken": newJsonToken,
+			"newJsonToken": newJSONToken,
+		})
+	}
+}
+
+// Blake2BHash Handler
+func Blake2BHash(ctx iris.Context) {
+
+	hash, err := blake2b.New256([]byte(app.SecretKey()))
+
+	if err != nil {
+
+		ctx.JSON(iris.Map{
+			"status":   "ERROR",
+			"message1": err.Error,
+		})
+
+	} else {
+
+		ctx.JSON(iris.Map{
+			"status":    "OK",
+			"file-hash": hash.Sum([]byte("Hello World!!!")),
+			"blake-256": blake2b.Sum256([]byte("Hello World!!!")),
+			"blake-384": blake2b.Sum384([]byte("Hello World!!!")),
+			"blake-512": blake2b.Sum512([]byte("Hello World!!!")),
 		})
 	}
 }

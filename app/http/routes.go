@@ -6,13 +6,15 @@ import (
 	"github.com/vzool/iris-app/app/http/middleware"
 )
 
+// Routes table
 func Routes(app *iris.Application) {
 
-	app.UseGlobal(middleware.HideID)
+	app.UseGlobal(middleware.Middlewares()...)
 
 	app.Get("/ping", controller.GetPing)
 	app.Get("/token", controller.GetToken)
 	app.Post("/verify", controller.VerifyToken)
+	app.Get("/hash", controller.Blake2BHash)
 
 	app.Get("/city", controller.CityIndex)
 	app.Post("/city", controller.CityStore)

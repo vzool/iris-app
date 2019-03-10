@@ -7,6 +7,7 @@
 -   [Validator](https://github.com/asaskevich/govalidator)
 -   [hide](https://github.com/emvi/hide) to hide really records ID
 -   [Platform-Agnostic Security Tokens](https://github.com/o1egl/paseto) to secure API tokens
+-   [Blake2B](golang.org/x/crypto/blake2b) is to check integrity of files and sent data
 -   [CLI](https://github.com/urfave/cli) used for:
 
     1- Database Migration.
