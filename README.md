@@ -20,7 +20,6 @@
 
 ```sh
 .
-├── README.md
 ├── app
 │   ├── bootstrap.go
 │   ├── console
@@ -32,13 +31,14 @@
 │   │   │   ├── task.go
 │   │   │   └── test.go
 │   │   ├── middleware
-│   │   │   └── hideID.go
+│   │   │   ├── hideID.go
+│   │   │   └── kernel.go
 │   │   └── routes.go
-│   ├── jobs
 │   └── models
 │       ├── city.go
 │       └── task.go
 ├── app.go
-├── public
+├── install.sh
+├── README.md
 └── test.db
 ```
