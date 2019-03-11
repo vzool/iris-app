@@ -13,6 +13,7 @@ func Routes(app *iris.Application) {
 
 	app.Get("/ping", controller.GetPing)
 	app.Get("/token", controller.GetToken)
+	app.Get("/token2", controller.GetToken2)
 	app.Post("/verify", controller.VerifyToken)
 	app.Get("/hash", controller.Blake2BHash)
 	app.Post("/binding", controller.Binding)

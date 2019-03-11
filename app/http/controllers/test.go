@@ -1,12 +1,14 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
 	"golang.org/x/crypto/blake2b"
 
 	"github.com/gobuffalo/uuid"
+	"github.com/hako/branca"
 
 	"github.com/joho/godotenv"
 	"github.com/kataras/iris"
@@ -151,4 +153,34 @@ func Binding(ctx iris.Context) {
 			"data":   data,
 		})
 	}
+}
+
+// GetToken2 handler
+func GetToken2(ctx iris.Context) {
+
+	b := branca.NewBranca("supersecretkeyyoushouldnotcommit") // This key must be exactly 32 bytes long.
+
+	// Encode String to Branca Token.
+	token, err := b.EncodeToString("Hello world!")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	//b.SetTTL(3600) // Uncomment this to set an expiration (or ttl) of the token (in seconds).
+	//token = "87y8daMzSkn7PA7JsvrTT0JUq1OhCjw9K8w2eyY99DKru9FrVKMfeXWW8yB42C7u0I6jNhOdL5ZqL" // This token will be not allowed if a ttl is set.
+
+	// Decode Branca Token.
+	message, err := b.DecodeToString(token)
+	if err != nil {
+		fmt.Println(err) // token is expired.
+		return
+	}
+	fmt.Println(token)   // 87y8da....
+	fmt.Println(message) // Hello world!
+
+	ctx.JSON(iris.Map{
+		"status":  "OK",
+		"token":   token,
+		"message": message,
+	})
 }
