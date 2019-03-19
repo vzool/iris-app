@@ -1,61 +1,65 @@
 {
-	"comment": "",
-	"ignore": "test",
-	"package": [
-		{
-			"checksumSHA1": "5gnBrB9ISzgkQe5rLOlFp2MqA/8=",
-			"path": "github.com/asaskevich/govalidator",
-			"revision": "f9ffefc3facfbe0caee3fea233cbb6e8208f4541",
-			"revisionTime": "2018-07-20T11:50:03Z"
-		},
-		{
-			"checksumSHA1": "8ZO3e+63jxub4p4vi+7Ne7W3H/g=",
-			"path": "github.com/emvi/hide",
-			"revision": "1cc68e38b0c087091ae6bf43590d781e5b500e3a",
-			"revisionTime": "2019-03-08T09:27:26Z"
-		},
-		{
-			"checksumSHA1": "K4baRuniMT2gjB3dhIDONN07l7U=",
-			"path": "github.com/gobuffalo/uuid",
-			"revision": "3a9fb6c5c481d4886f1e9323c61ad743fb955860",
-			"revisionTime": "2018-02-07T21:12:47Z"
-		},
-		{
-			"checksumSHA1": "BVLcEDQelqXp6x9u4mbrxE7rxKs=",
-			"path": "github.com/jinzhu/gorm",
-			"revision": "472c70caa40267cb89fd8facb07fe6454b578626",
-			"revisionTime": "2018-11-03T14:14:39Z"
-		},
-		{
-			"checksumSHA1": "o0+6uQDysjh6+RsudtQDW3AOwec=",
-			"path": "github.com/joho/godotenv",
-			"revision": "1709ab122c988931ad53508747b3c061400c2984",
-			"revisionTime": "2018-04-05T05:36:34Z"
-		},
-		{
-			"checksumSHA1": "bRGhTpBYsiQqvKkvqGr8+4O04dg=",
-			"path": "github.com/kataras/iris",
-			"revision": "f00af59c0177908d9bf7b4cf97ef89b29bfd21b6",
-			"revisionTime": "2019-02-22T02:24:01Z"
-		},
-		{
-			"checksumSHA1": "jBcsA2Ys2P84f3Ys/bmMbEeGqZE=",
-			"path": "github.com/o1egl/paseto",
-			"revision": "223ee0b022390c3bc4201998440f89515555d362",
-			"revisionTime": "2018-11-08T15:32:35Z"
-		},
-		{
-			"checksumSHA1": "eaK7NuGdfEVypOnqYniZSuF2S6s=",
-			"path": "golang.org/x/crypto/blake2b",
-			"revision": "c2843e01d9a2bc60bb26ad24e09734fdc2d9ec58",
-			"revisionTime": "2018-05-03T22:15:25Z"
-		},
-		{
-			"checksumSHA1": "Yx1MU40fyGe7hhqW9+dkv8kXa60=",
-			"path": "gopkg.in/urfave/cli.v1",
-			"revision": "cfb38830724cc34fedffe9a2a29fb54fa9169cd1",
-			"revisionTime": "2017-08-11T01:42:03Z"
-		}
-	],
-	"rootPath": "github.com/vzool/iris-app"
+  "comment": "",
+  "ignore": "test",
+  "package": [
+    {
+      "checksumSHA1": "5gnBrB9ISzgkQe5rLOlFp2MqA/8=",
+      "path": "github.com/asaskevich/govalidator",
+      "revision": "f9ffefc3facfbe0caee3fea233cbb6e8208f4541",
+      "revisionTime": "2018-07-20T11:50:03Z"
+    },
+    {
+      "checksumSHA1": "8ZO3e+63jxub4p4vi+7Ne7W3H/g=",
+      "path": "github.com/emvi/hide",
+      "revision": "1cc68e38b0c087091ae6bf43590d781e5b500e3a",
+      "revisionTime": "2019-03-08T09:27:26Z"
+    },
+    {
+      "checksumSHA1": "K4baRuniMT2gjB3dhIDONN07l7U=",
+      "path": "github.com/gobuffalo/uuid",
+      "revision": "3a9fb6c5c481d4886f1e9323c61ad743fb955860",
+      "revisionTime": "2018-02-07T21:12:47Z"
+    },
+    {
+      "checksumSHA1": "BVLcEDQelqXp6x9u4mbrxE7rxKs=",
+      "path": "github.com/jinzhu/gorm",
+      "revision": "472c70caa40267cb89fd8facb07fe6454b578626",
+      "revisionTime": "2018-11-03T14:14:39Z"
+    },
+    {
+      "checksumSHA1": "o0+6uQDysjh6+RsudtQDW3AOwec=",
+      "path": "github.com/joho/godotenv",
+      "revision": "1709ab122c988931ad53508747b3c061400c2984",
+      "revisionTime": "2018-04-05T05:36:34Z"
+    },
+    {
+      "checksumSHA1": "bRGhTpBYsiQqvKkvqGr8+4O04dg=",
+      "path": "github.com/kataras/iris",
+      "revision": "f00af59c0177908d9bf7b4cf97ef89b29bfd21b6",
+      "revisionTime": "2019-02-22T02:24:01Z"
+    },
+    {
+      "checksumSHA1": "jBcsA2Ys2P84f3Ys/bmMbEeGqZE=",
+      "path": "github.com/o1egl/paseto",
+      "revision": "223ee0b022390c3bc4201998440f89515555d362",
+      "revisionTime": "2018-11-08T15:32:35Z"
+    },
+    {
+      "checksumSHA1": "eaK7NuGdfEVypOnqYniZSuF2S6s=",
+      "path": "golang.org/x/crypto/blake2b",
+      "revision": "c2843e01d9a2bc60bb26ad24e09734fdc2d9ec58",
+      "revisionTime": "2018-05-03T22:15:25Z"
+    },
+    {
+      "checksumSHA1": "Yx1MU40fyGe7hhqW9+dkv8kXa60=",
+      "path": "gopkg.in/urfave/cli.v1",
+      "revision": "cfb38830724cc34fedffe9a2a29fb54fa9169cd1",
+      "revisionTime": "2017-08-11T01:42:03Z"
+    }
+  ],
+  "rootPath": "github.com/vzool/iris-app",
+  "heroku": {
+    "install": ["./..."],
+    "goVersion": "go1.12"
+  }
 }
